@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Room: {{description}}</h2>
+
+<mat-dialog-content [formGroup]="form">
+  <div fxLayout="column">
+
+    <mat-form-field color="accent">
+      <input matInput placeholder="Title" name="title" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <input matInput placeholder="Description" name="description" formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <input matInput placeholder="Link" name="link" formControlName="link">
+    </mat-form-field>
+    
+    <mat-form-field color="accent">
+      <mat-select placeholder="Category" name="categoryId" formControlName="categoryId">
+        <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.categoryName }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions fxLayoutAlign="center">
+  <button mat-raised-button (click)="close()">Close</button>
+  <button mat-raised-button mat-primary color="accent" (click)="save()" >Save</button>
+</mat-dialog-actions>

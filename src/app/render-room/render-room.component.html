@@ -1,0 +1,53 @@
+<div class="div-width" fxLayoutAlign="center">
+    <div class="video-player" id="player" >
+    </div>
+  </div>  
+
+  <div>
+      <button mat-raised-button (click)="pressPlay()"><mat-icon>play_arrow</mat-icon> </button>
+    <button mat-raised-button (click)="pressPause()"><mat-icon>pause</mat-icon> </button>
+    <mat-slider style = "width: 44vw" mode="indeterminate"  min = 0  step = "0.2" [value] = "playerEvent.sliderPosition" [(ngModel)]="sliderValue" (change)="sliderChange()" color = "warn"></mat-slider>
+
+    <!-- <input
+      contenteditable="true"
+      [(ngModel)] = "playerEvent.time"
+      placeholder={{playerEvent.time}}
+    /> -->
+  </div>
+  
+
+<div class="wrapper">
+  <nav class="nav" id="nav">
+    <div class="default-nav">
+      <div class="main-nav">
+        <div class="toggle"></div>
+        <div class="main-nav-item">
+          <a class="main-nav-item-link" href="#"></a>
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+  <div class="inner" id="inner">
+    <div class="content" id="content">
+      
+      <div *ngFor="let item of messageArray">
+
+        <span
+        
+        ><strong>{{ item.title }} : </strong> {{ item.message2 }}</span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="bottom" id="bottom">
+
+    <textarea
+      class="input"
+      (keydown.enter)="sendMessage();false"
+      id="input"
+      [(ngModel)]="messageText">
+    </textarea>
+    <div class="send" id="send" (click)="sendMessage()"></div>
+  </div>
+</div> 

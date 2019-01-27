@@ -1,0 +1,29 @@
+<div class="login-card">
+<mat-card class ="z-depth center" flex = "50">
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <div fxLayout="column">
+      <mat-form-field color="accent">
+        <input matInput placeholder="E-mail" name="email" [(ngModel)]="email" />
+      </mat-form-field>
+      <mat-form-field color="accent">
+          <input
+          type="password"
+          matInput
+          placeholder="Password"
+          name="password"
+          [(ngModel)]="password"
+        />
+      </mat-form-field>
+      <mat-card-actions align="center" class='login-wrapper'>
+        <button mat-raised-button color="accent" (click)="login()">Login</button>
+      </mat-card-actions>
+    </div>
+  </mat-card-content>
+  <div class = 'signup-wrapper'>
+    <span style = "font-family: Helvetica; margin: 2%;">Don't have an account? </span>
+    <a class = 'signup-button'  [routerLink] = "['/signup']"> Sign up</a>
+  </div>
+
+</mat-card>
+</div>

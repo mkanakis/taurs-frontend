@@ -1,0 +1,27 @@
+.login-card {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    width: 40%;
+    margin: 10px auto;
+}
+
+.signup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+a:link {
+    text-decoration: none;
+    color:rgb(256, 256, 256,  0.6);
+  }
+a:visited {
+    text-decoration: none;
+    color: rgb(256, 256, 256, 0.6);
+  }
+  

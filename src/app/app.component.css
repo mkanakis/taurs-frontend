@@ -1,0 +1,47 @@
+.base-container {
+    padding: 5px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.header-logo {
+    margin-top: 9px;
+    width: 20%;
+    height: 60%;
+}
+
+.nav-logo-wrapper {
+    flex: 1 1 0;    
+}
+
+.mat-elevation-z5 {
+    position: relative;
+    z-index: 2;
+ }
+
+.header-logo { 
+    cursor: pointer; 
+    
+}
+
+.drawer-container {
+    background-color: white
+}
+
+.sidenav {
+    background-color: white
+}
+
+.mat-button-toggle {
+    width: 12vw;
+    background-color: white;
+    color: black;
+
+    display: flex;
+    justify-content: flex-end
+}
+

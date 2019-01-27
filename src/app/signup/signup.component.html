@@ -1,0 +1,45 @@
+<div class="signup-card">
+  <form [formGroup]="signupData" autocomplete="off" novalidate (ngSubmit)="createUser(signupData.value)" class="z-depth center">
+    <mat-card flex="50">
+      <mat-card-title>Sign Up</mat-card-title>
+      <mat-card-content>
+        <div fxLayout="column">
+          <mat-form-field color="accent">
+            <input matInput placeholder="E-mail" formControlName="email" name="email" id="email" [(ngModel)]='email' />
+            <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+            <mat-error *ngIf="hasError('email', 'email')">Please provide valid email address</mat-error>
+          </mat-form-field>
+          <mat-form-field color="accent">
+            <input type="text" matInput placeholder="Username" formControlName="username" name="username" id="username"
+              [(ngModel)]='username' />
+
+            <mat-error *ngIf="hasError('username', 'required')">Username is required</mat-error>
+            <mat-error *ngIf="hasError('username', 'minlength')">Username must be at least 5 characters long
+            </mat-error>
+            <mat-error *ngIf="hasError('username', 'maxlength')">Username cannot be more than 25 characters long</mat-error>
+          </mat-form-field>
+          <mat-form-field color="accent">
+            <input type="password" matInput placeholder="Password" formControlName="password" name="password" id="password"
+              [(ngModel)]='password' />
+            <mat-error *ngIf="hasError('password', 'minlength')">Username must be at least 5 characters long</mat-error>
+            <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+          </mat-form-field>
+          <mat-form-field color="accent">
+            <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword" name="confirmPassword"
+              id="confirmPassword" [(ngModel)]='confirmPassword' />
+            <mat-error *ngIf="hasError('confirmPassword', 'required')">Please confirm your password</mat-error>
+            <mat-error *ngIf="signupData.controls['confirmPassword'].hasError('NoPasswordMatch')">Passwords do not
+              match</mat-error>
+          </mat-form-field>
+          <mat-card-actions align="center" class='login-wrapper'>
+            <button mat-raised-button color="accent" [disabled]="!signupData.valid">Create</button>
+          </mat-card-actions>
+        </div>
+      </mat-card-content>
+      <div class='login-wrapper'>
+        <span style="font-family: Helvetica;  margin: 1%;" align="center">Already have an account? </span>
+        <a class='login-button' [routerLink]="['/login']"> Login </a>
+      </div>
+    </mat-card>
+  </form>
+</div>

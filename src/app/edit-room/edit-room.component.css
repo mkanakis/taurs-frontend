@@ -1,0 +1,21 @@
+.mat-card {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.create-room {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.cropText {
+    max-width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chips {
+    font-size: 12px;   
+}

@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-title>New room</mat-card-title>
+  <mat-card-content>
+    <div fxLayout="column">
+      <mat-form-field color="accent">
+        <textarea
+          matInput
+          placeholder="Room Title"
+          name="title"
+          [(ngModel)]="title"
+        >
+        </textarea>
+      </mat-form-field>
+      <mat-form-field color="accent">
+        <textarea
+          matInput
+          placeholder="Description"
+          name="description"
+          [(ngModel)]="description"
+        >
+        </textarea>
+      </mat-form-field>
+      <mat-form-field color="accent">
+        <textarea matInput placeholder="Link" 
+            name = "link"
+             [(ngModel)] ="link">
+            </textarea>
+      </mat-form-field>
+      <mat-form-field color="accent">
+        <mat-select
+          placeholder="Category"
+          name="categoryId"
+          [(ngModel)]="categoryId"
+        >
+          <mat-option
+            *ngFor="let category of categories"
+            [value]="category.id"
+            >{{ category.categoryName }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="accent" (click)="createRoom()">
+        Create
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

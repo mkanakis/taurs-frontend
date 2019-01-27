@@ -1,0 +1,50 @@
+<mat-drawer-container fullscreen class="drawer-container">
+  
+  <mat-toolbar class="mat-elevation-z5" color="accent">
+    <mat-toolbar-row>
+      <button
+        mat-button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="nav-logo-wrapper">
+        <img
+          [routerLink]="['/rooms']"
+          class="header-logo"
+          src="../assets/taurus.png"
+        />
+      </span>
+      
+      <span class="spacer"> <input matInput placeholder="Search"/></span>
+      <button mat-button [routerLink]="['/rooms']">Rooms</button>
+      <button mat-button [matMenuTriggerFor]="auth">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button mat-button [routerLink]="['/rooms/edit']" *ngIf="isLoggedIn">My Rooms</button>
+      <mat-menu #auth="matMenu">
+        <button mat-menu-item [routerLink]="['/login']" *ngIf="!isLoggedIn">
+          Login
+        </button>
+        <button mat-menu-item *ngIf="isLoggedIn" (click)="onLogout()">
+          Logout
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-drawer #drawer class="sidenav" mode="push" multiple=f alse>
+    <ng-container *ngFor="let category of categories">
+      <mat-button-toggle value="bold" [routerLink]="['/rooms', category.id]" routerLinkActive="active" (click)="drawer.close()">{{category.categoryName}} </mat-button-toggle>
+    </ng-container>
+  </mat-drawer>
+  <mat-sidenav-container>
+    <mat-sidenav>Start</mat-sidenav>
+  </mat-sidenav-container>
+  <div class="base-container">
+    <router-outlet (activate)="routeChanged()"></router-outlet>
+  </div>
+</mat-drawer-container>
+<!-- <app-room-card *ngIf="categories && isRoom()" [categories]="categories"></app-room-card> -->

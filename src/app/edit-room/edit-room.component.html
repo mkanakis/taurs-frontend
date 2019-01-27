@@ -1,0 +1,28 @@
+<div class="container" fxLayout="row wrap" fxLayout.sm="column" fxLayoutGap="0.5%" fxLayoutAlign="left">
+  <ng-container *ngFor="let room of rooms">
+    <div fxFlex="0 1 calc(25% - 0.5%)" fxFlex.lt-md="0 1 calc(50% - 0.5%)" fxFlex.lt-sm="100%">
+      <mat-card class="card-picture">
+        <mat-card-title class="cropText">
+          {{room.title}}
+        </mat-card-title>
+        <img *ngIf = "link !== undefined" mat-card-image src='http://img.youtube.com/vi/{{getLinkFromRoomsMap(room.id)}}/mqdefault.jpg' alt="Sports stuff">
+        <mat-card-content>
+          <div fxLayout="row" fxLayout.xs="column">
+            <div *ngIf="catName !== undefined" fxFlex.gt-xs="50%" fxFlex.gt-md="25%">
+              <mat-chip-list class="chips">
+                <mat-chip color="accent" selected>{{getValueFromMap(room.categoryId)}}</mat-chip>
+              </mat-chip-list>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="end">
+          <button mat-raised-button color="primary" (click)="openEditDialog(room)">Edit</button>
+          <button mat-raised-button color="warn" (click)="delete(room.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-container>
+</div>
+
+<div class="container" fxLayout="row wrap">
+</div>
