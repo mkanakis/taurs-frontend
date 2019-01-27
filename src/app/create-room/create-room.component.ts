@@ -62,11 +62,15 @@ export class CreateRoomComponent implements OnInit {
 
     this.roomDataService.createRoom(room)
       .subscribe(data => {
-        this.snackBar.open('Room created successfully', 'Close');
+        this.snackBar.open('Room created successfully', 'Close', {
+          duration: 3000
+        });
         this.router.navigate([RoomCardComponent]);
       }, (err) => {
         console.log(err);
-        this.snackBar.open('Room' + err.error.error.details.messages.title[0], 'Close');
+        this.snackBar.open('Room' + err.error.error.details.messages.title[0], 'Close', {
+          duration: 3000
+        });
       });
     // const accessToken = this.authService.getAccessToken();
 
