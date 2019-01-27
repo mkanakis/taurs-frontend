@@ -1,0 +1,5 @@
+applications:
+- name: Taurs
+buildpack: staticfile_buildpack
+random-route: true
+memory: 256M
