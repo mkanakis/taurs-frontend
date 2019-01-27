@@ -4,7 +4,7 @@ applications:
   timeout: 180
   name: taurs-frontend
   buildpack: sdk-for-nodejs
-  command: npm run build
+  command: npm start
   memory: 256M
   domain: taurs.eu-gb.mybluemix.net
   host: taurs-app-node2
