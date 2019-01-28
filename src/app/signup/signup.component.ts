@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
   private readonly url = `${environment.api_url}/login`;
   public email: string;
   public password: string;
-  private username: string;
+  public username: string;
   public confirmPassword: string;
 
   constructor(private router: Router,
