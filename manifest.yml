@@ -1,5 +1,5 @@
 applications:
 - name: Taurs
-buildpack: staticfile_buildpack
+buildpack: https://github.com/cloudfoundry/staticfile-buildpack
 route: taurs-app-node2.taurs.eu-gb.mybluemix.net 
 memory: 256M
