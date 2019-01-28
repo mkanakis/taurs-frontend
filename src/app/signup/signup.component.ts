@@ -17,10 +17,10 @@ export class SignupComponent implements OnInit {
 
   public signupData: FormGroup;
   private readonly url = `${environment.api_url}/login`;
-  private email: string;
-  private password: string;
+  public email: string;
+  public password: string;
   private username: string;
-  private confirmPassword: string;
+  public confirmPassword: string;
 
   constructor(private router: Router,
     public snackBar: MatSnackBar,

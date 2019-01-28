@@ -17,7 +17,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./edit-room.component.css']
 })
 export class EditRoomComponent implements OnInit {
-  private rooms: any;
+  public rooms: any;
   private categories: any;
   private catName: any;
   private roomLinks: any;

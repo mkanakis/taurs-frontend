@@ -14,11 +14,11 @@ import { Room, PostRoom } from '../common/room';
   styleUrls: ['./create-room.component.css']
 })
 export class CreateRoomComponent implements OnInit {
-  private categories: object;
-  private title: string;
-  private categoryId: string;
-  private description: string;
-  private link: any;
+  public categories: object;
+  public title: string;
+  public categoryId: string;
+  public description: string;
+  public link: any;
   private clientId: string;
 
   constructor(

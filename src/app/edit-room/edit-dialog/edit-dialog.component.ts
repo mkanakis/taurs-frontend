@@ -11,10 +11,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class EditDialogComponent implements OnInit {
   form: FormGroup;
   private title: string;
-  private description: string;
+  public description: string;
   private link: any;
   private categoryId: string;
-  private categories: any;
+  public categories: any;
 
   constructor(
     private fb: FormBuilder,

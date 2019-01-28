@@ -59,7 +59,7 @@ export class RenderRoomComponent implements OnInit {
   public video: any;
   public player: any;
   public reframed: Boolean = false;
-  private sliderValue = 0;
+  public sliderValue = 0;
   constructor(
     private route: ActivatedRoute,
     private roomDataService: RoomDataService,
