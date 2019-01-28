@@ -2,7 +2,7 @@
   "name": "taurs-frontend",
   "version": "0.0.0",
   "engines": {
-     "node": "10.14.0",
+     "node": "8.12.0",
      "npm": "6.5.0"
   },
   "scripts": {
